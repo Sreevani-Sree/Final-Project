@@ -17,7 +17,7 @@
     <!-- Navbar start -->
     <nav class="navbar" id="navbar">
       <div class="container-fluid" >
-        <a class="navbar-brand" href="#" id="title">
+        <a class="navbar-brand" href="#" id="navbarid">
           <img src="./images/calendercheckblue.jpeg" alt="" width="35" height="25" class="d-inline-block align-text-top">
           Task Planner
         </a>
@@ -45,45 +45,55 @@
         </div>
         <div class="modal-body">
             <div class="col-auto">
-                <label for="title" class="form-label">Task-Title:</label>
-                <input type="text" aria-label="form-control" class="form-control">
+              <!-- TASK NAME -->
+               <label for="title" class="form-label">Task-Title:</label>
+                <span id="errMsg1"> </span>
+                <input type="text" id="title" aria-label="form-control" class="form-control">
                 </div>
                 <!-- <br> -->
                 <!-- Description box -->
                   <div class="col-auto">
+                    
                     <label for="description" class="form-label">Description:</label>
+                    <span id="errMsg2"> </span>
                     <textarea class="form-control" maxlength="300" id="description" rows="6" placeholder="300 characters limit" name="description"></textarea>
                   </div>
                 
                   <!-- Assign to -->
                   <div class="col-auto">
                     <label for="assignedto" class="input-text">Assigned To:</label>
-                    <input type="text" aria-label="form-control" class="form-control">
+                    <span id="errMsg3"> </span>
+                    <input type="text" id="assignedto" aria-label="form-control" class="form-control">
                     </div>
                  
                 <!-- Status -->
                 <div class="row">
                 <div class="col-md-6">
                   <label for="status" class="form-label" >Status:</label>
-                  <select class="form-select" aria-label=".form-select-sm example">
+                  <span id="errMsg4"> </span>
+                  <select class="form-select" id="status" aria-label=".form-select-sm example">
                     <!-- <option selected>Status </option> -->
-                    <option value="1">To Do</option>
-                    <option value="2">In Progress</option>
-                    <option value="3">Review</option>
-                    <option value="3">Done</option>
+                    <option value="select">Select</option>
+                    <option value="todo">To Do</option>
+                    <option value="in_progress">In Progress</option>
+                    <option value="review">Review</option>
+                    <option value="done">Done</option>
 
                   </select>        
                   </div>
                   
                   <div class="col-md-6">
                     <label for="dueDate" class="form-label" >Due date:</label>
-                  <input type="date" class="form-control" min=2021-01-01 max=2022-01-01 id="dueDate" name="dueDate" required>
+                    <!-- <span id="errMsg5"> </span> -->
+                  <input type="date" id="dueDate" data-provide="datepicker"
+                  class="form-control" min=2021-01-01 max=2022-01-01 id="dueDate" name="dueDate" required>
                 </div>
               </div>
               </div>
         <div class="modal-footer">
-          <button type="reset" value="Reset" class="btn btn-secondary">Reset</button>
-          <button type="button" value="Add Task" class="btn btn-primary">Submit</button>
+          <input class="btn btn-primary" type="reset" value="Reset">
+          <button type="button" value="Add Task" id="submit" class="btn btn-primary">Submit</button>
+          
         </div>
       </div>
     </div>
@@ -92,7 +102,7 @@
 
   <!-- tasklayout starts here -->
   <section class="container "> 
-  <div class="d-flex mb-3">
+  <div class="d-flex mb-3 row">
     <!-- class column -->
     <div class="col-auto">
     <!-- card1 starts here -->
@@ -209,7 +219,9 @@
 </div>
 </section>
 
-
+<!-- Javascript link -->
+<script src="./JS/index.js"></script>
+<script src="./JS/taskmanager.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
 
 </body>
